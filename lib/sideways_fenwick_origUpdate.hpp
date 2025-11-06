@@ -152,12 +152,12 @@ we made sideways_fenwick_selector_origUpdate a friend of Param to give it the ac
 
 
 
-          void update_weight_of_node(node_type givenNode, Real new_weight) {
+          void update_weight_of_node(node_type givenNode, double new_weight) {
             auto node = givenNode;
             double weightDifference =  new_weight - weight_of(node);
             _tree[0]+=weightDifference;
 
-            while(node>=BaseTree::root()){
+            while(node>=root()){
                 this->value_of(node)+=weightDifference; 
                 node = nextNode(node); 
             }
