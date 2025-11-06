@@ -158,7 +158,7 @@ we made sideways_fenwick_selector_origUpdate a friend of Param to give it the ac
             _tree[0]+=weightDifference;
 
             while(node>=root()){
-                this->value_of(node)+=weightDifference; 
+                _tree[node]+=weightDifference; 
                 node = nextNode(node); 
             }
 
