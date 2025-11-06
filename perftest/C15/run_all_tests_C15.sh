@@ -1,0 +1,20 @@
+#!/bin/bash
+
+compile=(
+'g++ -std=c++20 -I../../lib -O3 -march=native "-DWRSLIB=sideways_fenwick_selector<>" "-DWEIGHTNUM=${weightNums[$i]}" -o test$i uniform_changing.cpp'
+'g++ -std=c++20 -I../../lib -O3 -march=native "-DWRSLIB=sideways_fenwick_selector_origUpdate<>" "-DWEIGHTNUM=${weightNums[$i]}" -o test$i uniform_changing.cpp'
+'g++ -std=c++20 -I../../lib -O3 -march=native "-DWRSLIB=BucketMethod" "-DWEIGHTNUM=${weightNums[$i]}" -o test$i uniform_changing.cpp'
+'g++ -std=c++20 -I../../lib -O3 -march=native "-DWRSLIB=sampling::DynamicProposalArray" "-DWEIGHTNUM=${weightNums[$i]}" -o test$i uniform_changing.cpp'
+
+)
+
+names=(
+  'Sideways_Fenwick_Selector'
+  'Sideways_Fenwick_OrigUpdate'
+  'BucketMethod'
+  'DynamicProposalArray'
+)
+
+for ((idx=0; idx<${#compile[@]}; idx++)); do
+  bash testscriptChanging15.sh 10 "${compile[$idx]}" "${names[$idx]}"
+done
