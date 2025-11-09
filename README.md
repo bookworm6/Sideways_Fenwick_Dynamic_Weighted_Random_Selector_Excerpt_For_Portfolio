@@ -1,10 +1,10 @@
 # Sideways_Fenwick_Dynamic_Weighted_Random_Selector_Excerpt_For_Portfolio
 Excerpt from a research project with the Whitman Opti Lab optimizing a potential replacement for C++ std::discrete_distribution that supports dynamic weight updates. Although later outperformed by newer versions, the sideways_fenwick_selector demonstrates my programming and optimization skills. 
 
-## purpose
+## Purpose
 It is designed for stochastic simulations, in which there is a set of possible chemical reactions with different probabilities of occuring. The simulation needs to select a reaction to occur and then update the probabilities of other reactions occuring based on changes in the amount of reactants. Since the selection and update operations need to be perfomred millions of times, it is important that they are as efficient as possible. 
 
-## about the sideways fenwick tree
+## About the Sideways Fenwick Tree
 One data structure we explored was a fenwick tree. However, our update function frequently needed to update elements that were extremely far apart in memory, leading to paging issues. This led to the sideways fenwick tree, which has better locality.
 
 ![Diagram of the sideways fenwick tree](/Sideways_Fenwick_Tree_Diagram.png)
