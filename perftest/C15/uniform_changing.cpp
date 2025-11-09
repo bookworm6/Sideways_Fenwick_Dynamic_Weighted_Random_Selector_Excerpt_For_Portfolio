@@ -6,6 +6,8 @@
 //g++ -I../lib -O3 "-DWRSLIB=heap_random_selector<int>" "-DWEIGHTNUM=100000" -o test1 normal_changing.cpp
 
 #include "../lib/sideways_fenwick_selector.hpp"
+#include "../lib/dynamic_proposal_array.cpp"
+#include "../lib/bucket_alias.hpp"
 #include <iostream>
 #include <random>
 #include <vector>
