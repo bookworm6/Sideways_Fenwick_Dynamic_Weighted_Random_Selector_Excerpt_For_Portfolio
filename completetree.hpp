@@ -8,8 +8,7 @@
 #include <iostream>
 #include <sys/mman.h>
 
-namespace dense {
-namespace stochastic {
+
 
   typedef double Real;
   /* This complete tree class is meant to be subclassed to build various 
@@ -175,6 +174,4 @@ namespace stochastic {
       std::vector<entry_type> _tree;
   };
 
-}
-}
 #endif

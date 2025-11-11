@@ -8,7 +8,7 @@ from matplotlib.widgets import CheckButtons
 import numpy as np
 
 
-files = glob.glob("resultsC15_*.csv")
+files = glob.glob("results_*.csv")
 contents=[]
 names=[]
 weightnums=[]
@@ -79,7 +79,7 @@ ax.set_yscale("log")
 ax.set_xscale("log")
 ax.set_xlabel("weightnum")
 ax.set_ylabel("time")
-ax.set_title("C15")
+ax.set_title("Number of Weights vs Time: 5 Updates per 1 Selection Repeated 1,000,000 Times")
 ax.grid(True)
 
 plt.show()

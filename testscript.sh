@@ -14,14 +14,14 @@ declare -A sum
 declare -A result
 declare -A average
 
-echo -n  ""> resultsC15_$3.csv
+echo -n  ""> results_$3.csv
 
 for i in "${!weightNums[@]}";
 do
   eval "$2"
-  echo -n "${weightNums[$i]}, ">>resultsC15_$3.csv
+  echo -n "${weightNums[$i]}, ">>results_$3.csv
 done
-echo "">>resultsC15_$3.csv
+echo "">>results_$3.csv
 
 for j in "${!weightNums[@]}";
 do 
@@ -33,10 +33,10 @@ done
 for ((i=1; i<=$1; i++)); do
     for j in "${!weightNums[@]}";do
         result[$j]=$(./test$j)
-        echo -n "${result[$j]}, ">>resultsC15_$3.csv
+        echo -n "${result[$j]}, ">>results_$3.csv
         sum[$j]=$(awk "BEGIN { printf \"%.6f\", ${sum[$j]} + ${result[$j]} }")
     done
-    echo "" >>resultsC15_$3.csv
+    echo "" >>results_$3.csv
 
 done
 for j in "${!weightNums[@]}";do
@@ -44,9 +44,9 @@ for j in "${!weightNums[@]}";do
 done
 
 
-echo " " >> resultsC15_$3.csv
+echo " " >> results_$3.csv
 for j in "${!weightNums[@]}";do
-    echo -n "${average[$j]}, ">> resultsC15_$3.csv
+    echo -n "${average[$j]}, ">> results_$3.csv
 done
-echo "Test completed. Results saved in resultsC15_$3.csv"
+echo "Test completed. Results saved in results_$3.csv"
 

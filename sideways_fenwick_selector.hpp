@@ -20,14 +20,13 @@
 #include "completetree.hpp"
 
 
-namespace dense {
-namespace stochastic {
+
 
 
   template <
     typename I = size_t, size_t precision = std::numeric_limits<Real>::digits
   >
-  class old_sideways_fenwick_selector :
+  class sideways_fenwick_selector :
     //Extends a complete tree...
     protected complete_tree<I, Real >
   {
@@ -37,7 +36,7 @@ namespace stochastic {
 
       using size_type = std::ptrdiff_t;
       using index_type = I;
-      using This = old_sideways_fenwick_selector<index_type, precision>;
+      using This = sideways_fenwick_selector<index_type, precision>;
       /*the tree is indexed beginning at 1 so that moving down the tree requires fewer operations. 
       However, from the users perspective it is zero indexed. We hide the fact that it is indexed 
       at one from the user. index type indicates the index from the users perspective, 
@@ -48,10 +47,10 @@ namespace stochastic {
       using iterator = value_type*;
       using BaseTree = complete_tree<node_type, value_type>;
 
-      old_sideways_fenwick_selector() = delete;
+      sideways_fenwick_selector() = delete;
 
       template<typename InputIt>
-      old_sideways_fenwick_selector(InputIt first, InputIt last) :
+      sideways_fenwick_selector(InputIt first, InputIt last) :
           BaseTree() 
       {
         size_t n = static_cast<size_t>(last - first);
@@ -81,15 +80,15 @@ namespace stochastic {
         }
       }
 
-      old_sideways_fenwick_selector(old_sideways_fenwick_selector const&) = default;
+      sideways_fenwick_selector(sideways_fenwick_selector const&) = default;
 
-      old_sideways_fenwick_selector(old_sideways_fenwick_selector &&) = default;
+      sideways_fenwick_selector(sideways_fenwick_selector &&) = default;
 
-      old_sideways_fenwick_selector& operator=(old_sideways_fenwick_selector const&) = default;
+      sideways_fenwick_selector& operator=(sideways_fenwick_selector const&) = default;
 
-      old_sideways_fenwick_selector& operator=(old_sideways_fenwick_selector &&) = default;
+      sideways_fenwick_selector& operator=(sideways_fenwick_selector &&) = default;
 
-      ~old_sideways_fenwick_selector() = default;
+      ~sideways_fenwick_selector() = default;
 
       //this is the function to select an element according
       template<class URNG>
@@ -217,7 +216,7 @@ namespace stochastic {
         BaseTree::pop_entry();
       }
 
-      old_sideways_fenwick_selector const& const_this() const {
+      sideways_fenwick_selector const& const_this() const {
         return static_cast<This const&>(*this);
       }
 
@@ -236,6 +235,6 @@ namespace stochastic {
       
 
 
- };}};
+ };
 
  #endif

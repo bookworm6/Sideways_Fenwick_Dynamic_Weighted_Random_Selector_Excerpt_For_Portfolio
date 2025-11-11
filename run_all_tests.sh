@@ -14,5 +14,5 @@ names=(
 )
 
 for ((idx=0; idx<${#compile[@]}; idx++)); do
-  bash testscriptChanging15.sh 10 "${compile[$idx]}" "${names[$idx]}"
+  bash testscript.sh 10 "${compile[$idx]}" "${names[$idx]}"
 done
