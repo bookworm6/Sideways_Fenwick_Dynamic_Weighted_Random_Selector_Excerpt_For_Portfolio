@@ -4,6 +4,13 @@ Excerpt from a research project with the Whitman Opti Lab optimizing a potential
 ## Purpose
 The sidways fenwick selector is designed for stochastic simulations, in which there is a set of possible chemical reactions with different probabilities of occuring. The simulation needs to select a reaction to occur and then update the probabilities of other reactions occuring based on changes in the amount of reactants. Since the selection and update operations need to be performed millions of times, it is important that they are as efficient as possible. 
 
+## How to Run
+### Performance Tests
+If you would like to run the performance tests use `bash run_all_tests.sh`. However, be aware that the performance tests can take several hours to run and that accurate results require that you don't use your computer for other tasks while you run it. Also, factors such as your specific CPU, your compiler version, whether your laptop is plugged in, etc. can all effect the performance results. Alternatively, a set of results are already in the respository. Assuming you have python, pandas, matplotlib, and numpy installed, you can view a graph of the results by running performanceGrapher.py.
+
+### Accuracy Tests 
+If you would like to see a quick visual representation confirming that the sideways fenwick selector correctly selects elements in proportion to their weights, compile accuracyTest.cpp using `g++ -std=c++20 -O3 accuracyTest.cpp`. and then run it (`./a.out`). accuracyTest.cpp sets up a distribution in which there are ten elements with indexes 0 through 9, and assigns each elements their index as a weight. So the selector is 9 times more likely to select element 9 than element 1. It then selects an elements 100,000 times and writes the results to accuracyTestOutput.csv. You can view the distribution of results by running accuracyGrapher.py (python and matplotlib must be installed). It create a histogram (accuracyResults.png) of the selected element's index (which is equal to its weight in this example) and the number of times it was selected. 
+
 ## About the Sideways Fenwick Tree
 One data structure we explored was a fenwick tree. However, our update function frequently needed to update elements that were extremely far apart in memory, leading to paging issues. This led to the sideways fenwick tree, which has better locality.
 
