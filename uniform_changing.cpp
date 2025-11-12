@@ -7,7 +7,9 @@
 
 #include "sideways_fenwick_selector.hpp"
 #include "dynamic_proposal_array.cpp"
+#include "modifiable_heap_random_selector.hpp"
 #include "bucket_alias.hpp"
+#include "leafsum_final.hpp"
 #include <iostream>
 #include <random>
 #include <vector>

@@ -1,5 +1,5 @@
-#ifndef OLD_SIDEWAYS_FENWICK_RANDOM_SELECTOR
-#define OLD_SIDEWAYS_FENWICK_RANDOM_SELECTOR
+#ifndef SIDEWAYS_FENWICK_RANDOM_SELECTOR
+#define SIDEWAYS_FENWICK_RANDOM_SELECTOR
 ////////////////////////////////IMPORTANT/////////////////////////////////////
 //must compile this file using the -std=c++20 flag
 //compiling testingDistributions: g++ -std=c++20 test/testingDistributions.cpp
