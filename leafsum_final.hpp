@@ -12,8 +12,7 @@
 #include <bit>
 #include <algorithm>
 
-namespace dense {
-namespace stochastic {
+
 
   template <class int_type = size_t, class Real = double, size_t fanout = 16>
 class complete_kary_complete_tree {
@@ -634,6 +633,4 @@ private:
   size_t leaf_start_; // index of first leaf in data_
   double total_weight_ = 0;
 };
-}
-}
 #endif
