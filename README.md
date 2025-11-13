@@ -2,7 +2,7 @@
 Excerpt from a research project with the Whitman Opti Lab optimizing a potential replacement for C++ std::discrete_distribution that supports dynamic weight updates. Although later outperformed by newer versions, the sideways_fenwick_selector demonstrates my programming and optimization skills. 
 
 ## Purpose
-The sidways fenwick selector is designed for stochastic simulations, in which there is a set of possible chemical reactions with different probabilities of occuring. The simulation needs to select a reaction to occur and then update the probabilities of other reactions occuring based on changes in the amount of reactants. Since the selection and update operations need to be performed millions of times, it is important that they are as efficient as possible. 
+The sideways fenwick selector is designed for stochastic simulations, in which there is a set of possible chemical reactions with different probabilities of occurring. The simulation needs to select a reaction to occur and then update the probabilities of other reactions occurring based on changes in the amount of reactants. Since the selection and update operations need to be performed millions of times, it is important that they are as efficient as possible. 
 
 ## How to Run
 ### Performance Tests
